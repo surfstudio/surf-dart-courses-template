@@ -1,20 +1,20 @@
 # Description of your result
 
-You can describe your results in any language that is convenient for you, not just English.
+Вывод 3 аргументов в консоль.
 
 ## Description
 
-[Describe what you have done]
+Создал третий аргумент версия приложения, с последующей проверкой типа данных и вывод всех аргументов в одном print.
 
 ## How to
 
-[Describe how to run your application if there are any issues]
+dart build_app.dart ios release 10
 
 ## Problems
 
-[Describe the problems you encountered]
+-
 
 ## More
 
-[Here you can brag about what you managed to implement or do something beyond the task]
+Проверка типа данных, наверное.
 
