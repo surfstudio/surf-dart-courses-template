@@ -8,7 +8,7 @@
 
 ## How to
 
-dart build_app.dart ios release 10
+dart surf_dart_courses_template.dart ios release 10
 
 ## Problems
 
