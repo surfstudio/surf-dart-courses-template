@@ -153,7 +153,7 @@ final mapAfter2010 = {
 };
 
 //функция получения техники из структур данных Map (принимает список из Map)
-Set<AgriculturalMachinery> getMachineriesForMap(
+Set<AgriculturalMachinery> getMachineriesFromMap(
     List<Map<Countries, List<Territory>>> listMap) {
   Set<AgriculturalMachinery> machineriesSet = {};
   for (final map in listMap) {
@@ -171,20 +171,22 @@ Set<AgriculturalMachinery> getMachineriesForMap(
 int getAgeMachinerie(DateTime date) => DateTime.now().year - date.year;
 
 //функция расчета среднего возраста техники (принимает Set)
-int averageAgeAllMachineries(Set<AgriculturalMachinery> set) {
+int averageAgeAllMachineries(Set<AgriculturalMachinery> setMachinery) {
   int averageAge = 0;
-  set.forEach((element) => averageAge += getAgeMachinerie(element.releaseDate));
+  setMachinery.forEach(
+      (element) => averageAge += getAgeMachinerie(element.releaseDate));
 
-  return (averageAge / set.length).round();
+  return (averageAge / setMachinery.length).round();
 }
 
 //функция расчета среднего возраста старой техники с учетом процента (принимает Set и процент - целое число)
-int averageAgeOldMachineries(Set<AgriculturalMachinery> set, int percent) {
-  final machineriesList = set.toList();
+int averageAgeOldMachineries(
+    Set<AgriculturalMachinery> setMachinery, int percent) {
+  final machineriesList = setMachinery.toList();
   final sortingList = machineriesList
     ..sort((a, b) => a.releaseDate.compareTo(b.releaseDate));
 
-  final clampListPercent = (set.length / 100 * percent).round();
+  final clampListPercent = (setMachinery.length / 100 * percent).round();
 
   final sortingSet = sortingList.sublist(0, clampListPercent).toSet();
 
@@ -193,7 +195,7 @@ int averageAgeOldMachineries(Set<AgriculturalMachinery> set, int percent) {
 
 void main() {
   Set<AgriculturalMachinery> machineriesSet =
-      getMachineriesForMap([mapBefore2010, mapAfter2010]);
+      getMachineriesFromMap([mapBefore2010, mapAfter2010]);
 
   final averageAgeAll = averageAgeAllMachineries(machineriesSet);
   final percent = 50;
