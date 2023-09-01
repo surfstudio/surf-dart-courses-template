@@ -1,20 +1,21 @@
 # Description of your result
 
-You can describe your results in any language that is convenient for you, not just English.
+Код выводит в консоль средний возраст всей техники и средний возраст 50% самой старой техники
 
 ## Description
 
-[Describe what you have done]
+Для удобства я собрал всю технику в один список, после чего выполнил арифметические действия для вывода результата
 
 ## How to
 
-[Describe how to run your application if there are any issues]
+Для удобства я собрал всю технику в один список, после чего выполнил арифметические действия для вывода результата
 
 ## Problems
 
-[Describe the problems you encountered]
+Возможно, это не самое простое решение. Как можно упростить шаги?
+Для меня было не очень очевидно, что код под заданием - это входные данные.
 
 ## More
 
-[Here you can brag about what you managed to implement or do something beyond the task]
+Ничего страшного, что файл в папке test выдает ошибку? Это не влияет на задание?
 
