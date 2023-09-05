@@ -1,20 +1,21 @@
 # Description of your result
 
-You can describe your results in any language that is convenient for you, not just English.
+Средний возраст всей техники: 19.384615384615383
+Средний возраст 50% самой старой техники: 26.142857142857142
 
 ## Description
 
-[Describe what you have done]
+Программа выводит в консоль средний возраст всей техники и средний возраст 50% самой старой техники
 
 ## How to
 
-[Describe how to run your application if there are any issues]
+Я собрал все единицы техники в один список, после чего провел арифметические действия для вычесления результата
 
 ## Problems
 
-[Describe the problems you encountered]
+-
 
 ## More
 
-[Here you can brag about what you managed to implement or do something beyond the task]
+-
 
