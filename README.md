@@ -1,16 +1,26 @@
 # Description of your result
 
-Карты противника:
-King of clubs
-Nine of hearts
+Player Info:
+Name: Maxim Mikhaylov
+Height: 202
+
+Coach Info:
+Name: Vladimir Romanovich Alekno
+Trophies Won: 29
+
+Player Info:
+Name: Opposite hitter
+Description: An opposite hitter, also know as a right-side hitter, 
+is considered the most versatile because they can 
+excel on offense and defense.
 
 ## Description
 
-Вывод карт противника
+Иерархию классов с волейболистами
 
 ## How to
 
-Весь секрет в Typedef, или псевдоним типа функции который, помогает определять указатели на исполняемый код в памяти. Проще говоря, typedef может использоваться как указатель, который ссылается на функцию.
+-
 
 ## Problems
 
@@ -18,5 +28,5 @@ Nine of hearts
 
 ## More
 
-Помогла отсылка в теорию
+-
 
