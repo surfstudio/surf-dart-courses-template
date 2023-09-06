@@ -1,17 +1,16 @@
 # Description of your result
 
-Wearing Nike Air Max 90 sneakers...
-Tying shoelaces...
-Tying shoelaces...
-My shoelaces are made of Polyester.
+Карты противника:
+King of clubs
+Nine of hearts
 
 ## Description
 
-Программа описывает процесс создания кроссовок, используя конструкторы
+Вывод карт противника
 
 ## How to
 
-Воспользовался примером из урока и проявил немного креативности
+Весь секрет в Typedef, или псевдоним типа функции который, помогает определять указатели на исполняемый код в памяти. Проще говоря, typedef может использоваться как указатель, который ссылается на функцию.
 
 ## Problems
 
@@ -19,5 +18,5 @@ My shoelaces are made of Polyester.
 
 ## More
 
--
+Помогла отсылка в теорию
 
