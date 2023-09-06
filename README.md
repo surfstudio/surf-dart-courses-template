@@ -1,20 +1,22 @@
 # Description of your result
 
-You can describe your results in any language that is convenient for you, not just English.
+Карты противника:
+King of clubs
+Nine of hearts
 
 ## Description
 
-[Describe what you have done]
+Вывод карт противника
 
 ## How to
 
-[Describe how to run your application if there are any issues]
+Весь секрет в Typedef, или псевдоним типа функции который, помогает определять указатели на исполняемый код в памяти. Проще говоря, typedef может использоваться как указатель, который ссылается на функцию.
 
 ## Problems
 
-[Describe the problems you encountered]
+-
 
 ## More
 
-[Here you can brag about what you managed to implement or do something beyond the task]
+Помогла отсылка в теорию
 
