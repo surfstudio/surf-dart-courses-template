@@ -1,20 +1,32 @@
 # Description of your result
 
-You can describe your results in any language that is convenient for you, not just English.
+Player Info:
+Name: Maxim Mikhaylov
+Height: 202
+
+Coach Info:
+Name: Vladimir Romanovich Alekno
+Trophies Won: 29
+
+Player Info:
+Name: Opposite hitter
+Description: An opposite hitter, also know as a right-side hitter, 
+is considered the most versatile because they can 
+excel on offense and defense.
 
 ## Description
 
-[Describe what you have done]
+Иерархию классов с волейболистами
 
 ## How to
 
-[Describe how to run your application if there are any issues]
+-
 
 ## Problems
 
-[Describe the problems you encountered]
+-
 
 ## More
 
-[Here you can brag about what you managed to implement or do something beyond the task]
+-
 
