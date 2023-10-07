@@ -1,22 +1,25 @@
 # Description of your result
 
-Player Info:
-Name: Maxim Mikhaylov
-Height: 202
+Id	Category	Name	Price	Quantity
 
-Coach Info:
-Name: Vladimir Romanovich Alekno
-Trophies Won: 29
+Filter by Price (<= 1000 rubles):
+Id	Category	Name	Price	Quantity
+1	Хлеб	<Бородинский	500.00 рублей	5 штук
+2	Хлеб	Белый	200.00 рублей	15 штук
+3	Молоко	Полосатый кот	50.00 рублей	53 штук
+4	Молоко	коровка	50.00 рублей	53 штук
+5	Вода	Апельсин	25.00 рублей	100 штук
+6	Вода	Бородинский	500.00 рублей	5 штук
 
-Player Info:
-Name: Opposite hitter
-Description: An opposite hitter, also know as a right-side hitter, 
-is considered the most versatile because they can 
-excel on offense and defense.
+Filter by Quantity (< 25 pieces):
+Id	Category	Name	Price	Quantity
+1	Хлеб	<Бородинский	500.00 рублей	5 штук
+2	Хлеб	Белый	200.00 рублей	15 штук
+6	Вода	Бородинский	500.00 рублей	5 штук
 
 ## Description
 
-Иерархию классов с волейболистами
+Вывод товаров из списка
 
 ## How to
 
@@ -24,7 +27,8 @@ excel on offense and defense.
 
 ## Problems
 
--
+Не совсем было понятно, как использовать multiline string, поэтому заменил это на более привычный формат.
+При использовании multiline string получал ошибку Script Error
 
 ## More
 

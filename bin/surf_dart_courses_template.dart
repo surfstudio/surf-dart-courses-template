@@ -1,59 +1,82 @@
-//  Я большой фанат волебола, поэтому ...
-
-class Person {
+class Product {
+  int id;
+  String category;
   String name;
+  double price;
+  int quantity;
 
-  Person(this.name);
-
-  void displayInfo() {
-    print('Name: $name');
-  }
-}
-
-class Player extends Person {
-  int height;
-
-  Player(String name, this.height) : super(name);
+  Product(this.id, this.category, this.name, this.price, this.quantity);
 
   @override
-  void displayInfo() {
-    super.displayInfo();
-    print('Height: $height');
+  String toString() {
+    return '$id\t$category\t$name\t${price.toStringAsFixed(2)} рублей\t$quantity штук';
   }
 }
 
-class Coach extends Person {
-  int trophiesWon;
+abstract class Filter {
+  bool apply(Product product);
+}
 
-  Coach(String name, this.trophiesWon) : super(name);
+class CategoryFilter extends Filter {
+  String category;
+
+  CategoryFilter(this.category);
 
   @override
-  void displayInfo() {
-    super.displayInfo();
-    print('Trophies Won: $trophiesWon');
+  bool apply(Product product) {
+    return product.category.toLowerCase() == category.toLowerCase();
   }
 }
 
-class PlayerRole {
-  String name;
-  String description;
+class PriceFilter extends Filter {
+  double maxPrice;
 
-  PlayerRole(this.name, this.description);
+  PriceFilter(this.maxPrice);
+
+  @override
+  bool apply(Product product) {
+    return product.price <= maxPrice;
+  }
+}
+
+class QuantityFilter extends Filter {
+  int maxQuantity;
+
+  QuantityFilter(this.maxQuantity);
+
+  @override
+  bool apply(Product product) {
+    return product.quantity < maxQuantity;
+  }
+}
+
+void applyFilter(List<Product> products, Filter filter) {
+  print("Id\tCategory\tName\tPrice\tQuantity");
+  for (Product product in products) {
+    if (filter.apply(product)) {
+      print(product);
+    }
+  }
 }
 
 void main() {
-  var player = Player('Maxim Mikhaylov', 202);
-  var coach = Coach('Vladimir Romanovich Alekno', 29);
-  var role = PlayerRole('Opposite hitter',
-      'An opposite hitter, also know as a right-side hitter, \nis considered the most versatile because they can \nexcel on offense and defense.');
+  // Создаем список товаров
+  List<Product> products = [
+    Product(1, "Хлеб", "<Бородинский", 500, 5),
+    Product(2, "Хлеб", "Белый", 200, 15),
+    Product(3, "Молоко", "Полосатый кот", 50, 53),
+    Product(4, "Молоко", "коровка", 50, 53),
+    Product(5, "Вода", "Апельсин", 25, 100),
+    Product(6, "Вода", "Бородинский", 500, 5),
+  ];
 
-  print('Player Info:');
-  player.displayInfo();
+  // Применяем фильтры и выводим результаты
+  print("Filter by Category (Electronics):");
+  applyFilter(products, CategoryFilter("Electronics"));
 
-  print('\nCoach Info:');
-  coach.displayInfo();
+  print("\nFilter by Price (<= 1000 rubles):");
+  applyFilter(products, PriceFilter(1000.0));
 
-  print('\nPlayer Info:');
-  print('Name: ${role.name}');
-  print('Description: ${role.description}');
+  print("\nFilter by Quantity (< 25 pieces):");
+  applyFilter(products, QuantityFilter(25));
 }
