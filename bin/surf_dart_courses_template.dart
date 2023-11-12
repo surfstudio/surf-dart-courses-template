@@ -138,66 +138,22 @@ void main(List<String> arguments) {
   sort(listProduct);
 }
 
-// интерфейс
-abstract class Filter {
-  bool apply(RawProductItem products);
-}
-
-class CategoryFilter implements Filter {
-  final String categoryName;
-
-  CategoryFilter(this.categoryName);
-
-  @override
-  bool apply(RawProductItem products) {
-    return products.categoryName == categoryName;
-  }
-}
-
-class SubcategoryFilter implements Filter {
-  final String subcategoryName;
-
-  SubcategoryFilter(this.subcategoryName);
-
-  @override
-  bool apply(RawProductItem products) {
-    return products.subcategoryName == subcategoryName;
-  }
-}
-
 void sort(List<RawProductItem> products) {
-  var productFinish;
-  final productExpirationDates = getProductsWithExpirationDates(products);
-  final productsStock = productsInStock(productExpirationDates);
+  final productsStock = filterProducts(products);
   final productCategoryName =
       productsStock.map<String>((e) => e.categoryName).toSet().toList();
   final productsubcategoryName =
       productsStock.map<String>((e) => e.subcategoryName).toSet().toList();
 
-  // for(int i = 0; i <= productCategoryName.length; i++){
-  //   for(int j = 0; j <= productsubcategoryName.length; j ++){
-  //     for(int p = 0; p < productsStock.length; p++){
-  //         if()
-  //     }
-  //   }
-  // }
-
   for (var category in productCategoryName) {
     var productIteration = productsStock
-        .where((product) => CategoryFilter(category).apply(product))
+        .where((product) =>
+            category == product.categoryName && category.isNotEmpty)
         .toSet()
         .toList();
     for (var subcategory in productsubcategoryName) {
-      // productFinish = productIteration
-      //     .where((product) => SubcategoryFilter(subcategory).apply(product))
-      //     .toList()
-      //     .map<Map<String, Map<String, List<String>>>>((e) => {
-      //           e.categoryName: {
-      //             e.subcategoryName: [e.name]
-      //           }
-      //         });
       print(productIteration
-          .where((product) => SubcategoryFilter(subcategory).apply(product))
+          .where((product) => subcategory == product.subcategoryName)
           .toSet()
           .toList()
           .map<Map<String, Map<String, List<String>>>>((e) => {
@@ -211,15 +167,11 @@ void sort(List<RawProductItem> products) {
   }
 }
 
-List<RawProductItem> getProductsWithExpirationDates(
-        List<RawProductItem> products) =>
-    products
-        .where(
-            (element) => element.expirationDate.isAfter(DateTime(2021, 12, 21)))
-        .toList();
-
-List<RawProductItem> productsInStock(List<RawProductItem> products) =>
-    products.where((element) => element.qty > 0).toList();
+List<RawProductItem> filterProducts(List<RawProductItem> products) => products
+    .where((element) =>
+        element.expirationDate.isAfter(DateTime(2021, 12, 21)) &&
+        element.qty > 0)
+    .toList();
 
 class RawProductItem {
   final String name;
